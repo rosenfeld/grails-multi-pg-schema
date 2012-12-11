@@ -7,7 +7,7 @@ class CurrentUserSchemaFilters {
       before = {
         User.withSession { session ->
           session.connection().prepareStatement(
-            "SET search_path TO ${currentUser.current_user_schema},public").execute()
+            "SET search_path TO ${currentUser.currentUserSchema},public").execute()
         }
         true
       }
